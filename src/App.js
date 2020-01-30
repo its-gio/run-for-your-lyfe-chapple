@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios'
 import './App.css';
+import Home from "./components/pages/Home"
+import Residents from "./components/pages/Residents"
 
 // var today = new Date();
 // var dd = String(today.getDate()).padStart(2, '0');
@@ -14,7 +16,8 @@ class App extends React.Component {
     super();
 
     this.state = {
-      people: []
+      people: [],
+      page: "home"
     }
   }
 
@@ -25,12 +28,19 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
+  changePage = (page) => {
+    this.setState({ page })
+  }
+
   render() {
-    return (
-      <div className="App">
-        Working
-      </div>
-    );
+    switch(this.state.page) {
+      case "home":
+        return <Residents people={this.state.people} />
+      case "residents":
+        return <Home changePage={this.changePage} />
+      default:
+        return <Home changePage={this.changePage} />
+    }
   }
 }
 
