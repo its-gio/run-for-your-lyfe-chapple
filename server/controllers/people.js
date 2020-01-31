@@ -1,5 +1,4 @@
-const data = require("../../data");
-const people = data.data
+const { data: people } = require("../../data");
 let dataLength = people.length;
 let id = dataLength;
 
@@ -25,20 +24,16 @@ module.exports.deletePerson = (req, res) => {
 
 module.exports.editPerson = (req, res) => {
   let { id } = req.params;
-  let { first_name, last_name, c_in, c_out, meal, job, available, skills, decessed } = req.body;
+  const keys = ["first_name", "last_name", "c_in", "c_out", "meal", "job", "available", "skills", "decessed"];
   let targetIndex = people.findIndex(person => person.id === +id);
   if (targetIndex === -1) return res.status(404).send(`${id} does not exist!`)
   let foundPerson = people[targetIndex];
 
-  foundPerson.first_name = first_name;
-  foundPerson.last_name = last_name;
-  foundPerson.c_in = c_in;
-  foundPerson.c_out = c_out;
-  foundPerson.meal = meal;
-  foundPerson.job = job;
-  foundPerson.available = available;
-  foundPerson.skills = skills;
-  foundPerson.decessed = decessed;
+  for(let key in req.body) {
+    if(keys.includes(key)) {
+      foundPerson[key] = req.body[key];
+    }
+  }
   
   res.status(200).json(people);
 }
