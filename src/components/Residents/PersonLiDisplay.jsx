@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PersonLI_D(props) {
+export default function PersonLiDisplay(props) {
   const { first_name, last_name, c_in, c_out, job, available, decessed } = props.person;
   let availableColor = available ? "green" : "red";
 
@@ -15,7 +15,7 @@ export default function PersonLI_D(props) {
         <span>{job}</span>
         <span><span style={{backgroundColor: availableColor}} className="available"></span></span>
         <span>Learn More ></span>
-        <span><input checked={ decessed ? "check" : "" } type="checkbox"/></span>
+        <span><input readOnly checked={ decessed ? "check" : "" } type="checkbox"/></span>
       </li>
       <hr/>
     </>

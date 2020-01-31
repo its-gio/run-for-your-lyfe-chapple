@@ -27,7 +27,7 @@ button:focus {
   outline: none;
 }
 
-/* Residents */
+/***** Residents *****/
 .residents-list {
   background-color: #aaa;
   width: 95%;
@@ -74,3 +74,42 @@ button:focus {
 .residents-list ul hr:last-child {
   display: none;
 }
+
+/** Residents > Modal Form **/
+.edit-modal {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .6);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.edit-modal form {
+  background-color: #aaa;
+  margin-top: 10%;
+  max-width: 60vw;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-modal form span {
+  position: relative;
+}
+
+.edit-modal form span .available {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 40%;
+}
+
+/* .edit-modal form {
+
+} */

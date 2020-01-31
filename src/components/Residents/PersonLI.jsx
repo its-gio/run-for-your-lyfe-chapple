@@ -1,6 +1,6 @@
 import React from 'react';
-import PersonLI_D from "./PersonLI_D";
-import PersonLI_E from "./PersonLI_E";
+import PersonLiDisplay from "./PersonLiDisplay";
+import PersonLiEdit from "./PersonLiEdit";
 
 export default class PersonLI extends React.Component{
   constructor() {
@@ -25,6 +25,11 @@ export default class PersonLI extends React.Component{
   }
 
   render () {
-    return <PersonLI_D editChange={this.editChange} person={this.state.person} />
+    return (
+      <>
+        <PersonLiDisplay editChange={this.editChange} person={this.state.person} />
+        { this.state.edit ? <PersonLiEdit sendEdits={this.sendEdits} person={this.state.person} /> : ""}
+      </>
+    )
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from "../defaults/Header"
-import PersonLI from "../Residents/PersonLI"
+import PersonLI from "../Residents/PersonLi"
 
 export default class Residents extends Component {
   render() {
