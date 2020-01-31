@@ -3,7 +3,7 @@ module.exports.data = [
     first_name: "Gio",
     last_name: "Aguirre",
     c_in: "1/30/2020",
-    c_out: null,
+    c_out: "",
     meal: [
       { breakfast: false, lunch: false, dinner: false, date: "1/30/2020" }
     ],
@@ -16,7 +16,7 @@ module.exports.data = [
     first_name: "Joe",
     last_name: "Shmoes",
     c_in: "1/30/2020",
-    c_out: null,
+    c_out: "",
     meal: [
       { breakfast: false, lunch: false, dinner: false, date: "1/30/2020" }
     ],
@@ -29,7 +29,7 @@ module.exports.data = [
     first_name: "Sally",
     last_name: "Shmoes",
     c_in: "1/30/2020",
-    c_out: null,
+    c_out: "",
     meal: [
       { breakfast: false, lunch: false, dinner: true, date: "1/30/2020" }
     ],
@@ -42,7 +42,7 @@ module.exports.data = [
     first_name: "Guy",
     last_name: "Guyson",
     c_in: "1/30/2020",
-    c_out: null,
+    c_out: "",
     meal: [
       { breakfast: true, lunch: false, dinner: true, date: "1/30/2020" }
     ],
@@ -55,7 +55,7 @@ module.exports.data = [
     first_name: "Billy",
     last_name: "Guyson",
     c_in: "1/30/2020",
-    c_out: null,
+    c_out: "",
     meal: [
       { breakfast: true, lunch: false, dinner: true, date: "1/30/2020" }
     ],
