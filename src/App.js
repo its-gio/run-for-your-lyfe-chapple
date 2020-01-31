@@ -32,10 +32,14 @@ class App extends React.Component {
     this.setState({ page })
   }
 
+  getNewData = (people) => {
+    this.setState({ people })
+  }
+
   render() {
     switch(this.state.page) {
       case "home":
-        return <Residents people={this.state.people} />
+        return <Residents getNewData={this.getNewData} people={this.state.people} />
       case "residents":
         return <Home changePage={this.changePage} />
       default:

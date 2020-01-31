@@ -28,7 +28,7 @@ export default class PersonLI extends React.Component{
     return (
       <>
         <PersonLiDisplay editChange={this.editChange} person={this.state.person} />
-        { this.state.edit ? <PersonLiEdit sendEdits={this.sendEdits} person={this.state.person} /> : ""}
+        { this.state.edit ? <PersonLiEdit getNewData={this.props.getNewData} sendEdits={this.sendEdits} person={this.state.person} /> : ""}
       </>
     )
   }

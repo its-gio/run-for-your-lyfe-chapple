@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from "axios"
 import ReactDOM from "react-dom"
 
 export default class PersonLiEdit extends React.Component {
@@ -6,6 +7,7 @@ export default class PersonLiEdit extends React.Component {
     super();
 
     this.state = {
+      id: 0,
       first_name: "",
       last_name: "",
       c_in: "",
@@ -17,16 +19,23 @@ export default class PersonLiEdit extends React.Component {
   }
   
   componentDidMount() {
-    const { first_name, last_name, c_in, c_out, job, available, decessed } = this.props.person;
-    this.setState({ first_name, last_name, c_in, c_out, job, available, decessed  })
+    const { id, first_name, last_name, c_in, c_out, job, available, decessed } = this.props.person;
+    this.setState({ id, first_name, last_name, c_in, c_out, job, available, decessed  })
   }
   
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
   
-  changeAvail = (e) => {
+  changeAvail = () => {
     this.setState({ available: !this.state.available })
+  }
+
+  putPerson = () => {
+    axios
+      .put(`/api/people/${this.state.id}`, this.state)
+      .then(res => this.props.getNewData(res.data))
+      .catch(err => console.log(err));
   }
   
   render() {
