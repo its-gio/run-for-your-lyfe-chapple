@@ -1,4 +1,4 @@
-const { data: people } = require("../../data");
+const { data: people, decessed, emailList } = require("../../data");
 let dataLength = people.length;
 let id = dataLength;
 
@@ -14,10 +14,11 @@ module.exports.postPerson = (req, res) => {
 }
 
 module.exports.deletePerson = (req, res) => {
-  let { id } = req.params;
+  let { id, decessedParam } = req.params;
   let targetIndex = people.findIndex(person => person.id === +id)
   if (targetIndex === -1) return res.status(404).send(`${id} does not exist!`);
-  people.splice(targetIndex, 1);
+  let person = people.splice(targetIndex, 1);
+  decessedParam === "yes" ? decessed.push(person) : emailList.push(person);
 
   res.status(200).json(people);
 }

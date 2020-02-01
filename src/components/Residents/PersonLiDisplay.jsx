@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function PersonLiDisplay(props) {
-  const { first_name, last_name, c_in, c_out, job, available, decessed } = props.person;
+  const { first_name, last_name, c_in, c_out, job, available } = props.person;
   let availableColor = available ? "green" : "red";
 
   return (

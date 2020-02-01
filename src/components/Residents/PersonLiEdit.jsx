@@ -14,21 +14,23 @@ export default class PersonLiEdit extends React.Component {
       c_out: "",
       job: "",
       available: false,
-      decessed: false
     }
   }
   
   componentDidMount() {
-    const { id, first_name, last_name, c_in, c_out, job, available, decessed } = this.props.person;
-    this.setState({ id, first_name, last_name, c_in, c_out, job, available, decessed  })
+    const { id, first_name, last_name, c_in, c_out, job, available } = this.props.person;
+    this.setState({ id, first_name, last_name, c_in, c_out, job, available  })
   }
-  
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-  
-  changeAvail = () => {
-    this.setState({ available: !this.state.available })
+
+  deletePerson = () => {
+    let decessedBool = prompt("Is this person decessed?", "Yes or No");
+    if (!decessedBool) return;
+    if (decessedBool.toLowerCase() === "yes" || decessedBool.toLowerCase() === "no") {
+      axios
+        .delete(`/api/people/${this.state.id}/${decessedBool}`)
+        .then(res => this.props.getNewData(res.data))
+        .catch(err => console.error(err));
+    }
   }
 
   putPerson = () => {
@@ -40,6 +42,14 @@ export default class PersonLiEdit extends React.Component {
     // this.props.enableEdit();
   }
   
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+  
+  changeAvail = () => {
+    this.setState({ available: !this.state.available })
+  }
+
   render() {
     let availableColor = this.state.available ? "green" : "red";
 
@@ -54,7 +64,7 @@ export default class PersonLiEdit extends React.Component {
           <input onChange={this.handleChange} value={ this.state.job } name="job" placeholder="job" />
           <span onDoubleClick={this.changeAvail} >Available: <span style={{backgroundColor: availableColor}} className="available"></span></span>
           <span>Skill</span>
-          <p>Decessed?: <input checked={ this.state.decessed ? "check" : "" } type="checkbox"/></p>
+          <p>Remove: <input checked={false} onChange={this.deletePerson} type="checkbox"/></p>
           <button>Submit</button>
         </form>
       </div>,

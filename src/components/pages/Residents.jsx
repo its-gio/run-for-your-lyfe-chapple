@@ -17,7 +17,7 @@ export default class Residents extends Component {
   }
   
   render() {
-    let residentsList = this.props.people.map((person, i) => <PersonLI key={i} person={person}/>)
+    let residentsList = this.props.people.map((person, i) => <PersonLI getNewData={this.props.getNewData} key={i} person={person}/>)
     return (
       <div>
         <Header title="Residents" />

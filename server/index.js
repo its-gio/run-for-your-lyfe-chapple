@@ -7,7 +7,7 @@ app
   .use(express.json())
   .get("/api/people", getPeople)
   .post("/api/people", postPerson)
-  .delete("/api/people/:id", deletePerson)
+  .delete("/api/people/:id/:decessedParam", deletePerson)
   .put("/api/people/:id", editPerson)
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
