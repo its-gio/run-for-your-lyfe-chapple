@@ -118,3 +118,16 @@ button:focus {
   font-size: 2rem;
   padding: 10px 20p;
 }
+
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills-container p {
+  margin-right: 10px;
+}
+
+.skills-container .skills-inputs {
+  display: flex;
+}
