@@ -66,7 +66,7 @@ module.exports.data = [
   },
   { id: 5,
     first_name: "Niel",
-    last_name: "dedman",
+    last_name: "Dedman",
     c_in: "1/30/2020",
     c_out: "1/30/2020",
     meal: [
@@ -75,6 +75,10 @@ module.exports.data = [
     job: "",
     available: true,
     skills: {},
-    decessed: true
+    decessed: false
   }
 ]
+
+module.exports.decessed = []
+
+module.exports.emailList = []
