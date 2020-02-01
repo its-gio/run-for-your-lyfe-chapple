@@ -54,8 +54,8 @@ export default class PersonLiEdit extends React.Component {
           <input onChange={this.handleChange} value={ this.state.job } name="job" placeholder="job" />
           <span onDoubleClick={this.changeAvail} >Available: <span style={{backgroundColor: availableColor}} className="available"></span></span>
           <span>Skill</span>
-          {/* <span><input checked={ this.state.decessed ? "check" : "" } type="checkbox"/></span> */}
-          <button>submit</button>
+          <p>Decessed?: <input checked={ this.state.decessed ? "check" : "" } type="checkbox"/></p>
+          <button>Submit</button>
         </form>
       </div>,
       document.querySelector('#modal')

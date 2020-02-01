@@ -86,8 +86,7 @@ export default class AddResident extends React.Component {
               <textarea onBlur={this.addSkills} placeholder="Skill1: 1-5, Skill2: 1-5, Skill3: 1-5" id="" cols="30" rows="10"></textarea>
             </span>
           </span>
-          <span><input readOnly type="checkbox"/></span>
-          <button>submit</button>
+          <button>Submit</button>
         </form>
       </div>,
       document.querySelector('#modal')

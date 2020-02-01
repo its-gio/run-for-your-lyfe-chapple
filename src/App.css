@@ -127,7 +127,3 @@ button:focus {
 .skills-container p {
   margin-right: 10px;
 }
-
-.skills-container .skills-inputs {
-  display: flex;
-}

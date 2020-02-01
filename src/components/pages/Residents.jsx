@@ -22,12 +22,11 @@ export default class Residents extends Component {
       <div>
         <Header title="Residents" />
         <section className="residents-list">
-          <h4><span>First Name</span> <span>Last Name</span> <span>Check-in</span> <span>Check-out</span> <span>Meals</span> <span>Job</span> <span>Available</span> <span>Skills</span> <span></span></h4>
+          <h4><span>First Name</span> <span>Last Name</span> <span>Check-in</span> <span>Check-out</span> <span>Meals</span> <span>Job</span> <span>Available</span> <span>Skills</span></h4>
           <ul>{ residentsList }</ul>
         </section>
+
         { this.state.addModalShow ? <AddResident showModalToggle={this.showModalToggle} /> : ""}
-
-
         <button onClick={this.showModalToggle} className="add-resident">+</button>
       </div>
     )

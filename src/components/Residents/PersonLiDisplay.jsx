@@ -15,7 +15,6 @@ export default function PersonLiDisplay(props) {
         <span>{job}</span>
         <span><span style={{backgroundColor: availableColor}} className="available"></span></span>
         <span>Learn More ></span>
-        <span><input readOnly checked={ decessed ? "check" : "" } type="checkbox"/></span>
       </li>
       <hr/>
     </>
