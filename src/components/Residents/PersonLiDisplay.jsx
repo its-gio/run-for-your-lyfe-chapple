@@ -6,7 +6,7 @@ export default function PersonLiDisplay(props) {
 
   return (
     <>
-      <li onDoubleClick={props.editChange}>
+      <li onDoubleClick={props.enableEdit}>
         <span>{first_name}</span>
         <span>{last_name}</span>
         <span>{c_in}</span>

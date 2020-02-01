@@ -110,6 +110,11 @@ button:focus {
   right: 40%;
 }
 
-/* .edit-modal form {
-
-} */
+/***** Add Resident *****/
+.add-resident {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 2rem;
+  padding: 10px 20p;
+}
