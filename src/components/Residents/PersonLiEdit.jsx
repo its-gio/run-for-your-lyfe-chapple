@@ -33,13 +33,14 @@ export default class PersonLiEdit extends React.Component {
     }
   }
 
-  putPerson = () => {
+  putPerson = (e) => {
     // BUG!!! Refresh to homepage when submit.
+    e.preventDefault();
     axios
       .put(`/api/people/${this.state.id}`, this.state)
       .then(res => this.props.getNewData(res.data))
       .catch(err => console.log(err));
-    // this.props.enableEdit();
+    this.props.enableEdit();
   }
   
   handleChange = (e) => {
@@ -55,7 +56,8 @@ export default class PersonLiEdit extends React.Component {
 
     return ReactDOM.createPortal(
       <div onClick={this.props.enableEdit} className="edit-modal">
-        <form onSubmit={this.putPerson} onClick={(e) => e.stopPropagation()} >
+        {/* onSubmit={this.putPerson} */}
+        <form onClick={(e) => e.stopPropagation()} >
           <input onChange={this.handleChange} value={ this.state.first_name } name="first_name" placeholder="First Name" />
           <input onChange={this.handleChange} value={ this.state.last_name } name="last_name" placeholder="Last Name" />
           <input onChange={this.handleChange} value={ this.state.c_in } name="c_in" placeholder="mm/dd/yyy" />
@@ -65,7 +67,7 @@ export default class PersonLiEdit extends React.Component {
           <span onDoubleClick={this.changeAvail} >Available: <span style={{backgroundColor: availableColor}} className="available"></span></span>
           <span>Skill</span>
           <p>Remove: <input checked={false} onChange={this.deletePerson} type="checkbox"/></p>
-          <button>Submit</button>
+          <button onClick={this.putPerson}>Submit</button>
         </form>
       </div>,
       document.querySelector('#modal')
