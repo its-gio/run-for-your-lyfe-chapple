@@ -43,14 +43,17 @@ button:focus {
   text-decoration: underline;
   width: 15%;
 }
+
 .residents-list li {
   padding: 5px;
   display: flex;
+  align-items: center;
 }
 
 .residents-list li span {
   width: 15%;
   position: relative;
+  margin-right: 5px;
 }
 
 .residents-list li span .available {
@@ -59,9 +62,9 @@ button:focus {
   height: 10px;
   border-radius: 50%;
   position: absolute;
-  top: 20%;
-  left: 20%;
-  transform: translate(-20%, -20%);
+  top: 22%;
+  left: 22%;
+  transform: translate(-50%, -50%);
 }
 
 .residents-list li span input[type='checkbox']{
