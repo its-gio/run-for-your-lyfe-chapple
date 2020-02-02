@@ -9,8 +9,7 @@ module.exports.data = [
     ],
     job: "Leader",
     available: false,
-    skills: { orginization: 5, farming: 2, scavanging: 4 },
-    decessed: false
+    skills: { orginization: 5, farming: 2, scavanging: 4 }
   },
   { id: 1,
     first_name: "Joe",
@@ -22,8 +21,7 @@ module.exports.data = [
     ],
     job: "Farmer",
     available: false,
-    skills: { orginization: 1, farming: 4, scavanging: 2 },
-    decessed: false
+    skills: { orginization: 1, farming: 4, scavanging: 2 }
   },
   { id: 2,
     first_name: "Sally",
@@ -35,8 +33,7 @@ module.exports.data = [
     ],
     job: "Scavenger",
     available: false,
-    skills: { orginization: 1, farming: 3, scavanging: 4 },
-    decessed: false
+    skills: { orginization: 1, farming: 3, scavanging: 4 }
   },
   { id: 3,
     first_name: "Guy",
@@ -48,8 +45,7 @@ module.exports.data = [
     ],
     job: "Guard",
     available: false,
-    skills: { guard: 5 },
-    decessed: false
+    skills: { guard: 5 }
   },
   { id: 4,
     first_name: "Billy",
@@ -61,8 +57,7 @@ module.exports.data = [
     ],
     job: "",
     available: true,
-    skills: { cooking: 3 },
-    decessed: false
+    skills: { cooking: 3 }
   },
   { id: 5,
     first_name: "Niel",
@@ -74,8 +69,7 @@ module.exports.data = [
     ],
     job: "",
     available: true,
-    skills: {},
-    decessed: false
+    skills: {}
   }
 ]
 
