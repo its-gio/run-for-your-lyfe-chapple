@@ -30,6 +30,7 @@ export default class PersonLiEdit extends React.Component {
         .delete(`/api/people/${this.state.id}/${decessedBool}`)
         .then(res => this.props.getNewData(res.data))
         .catch(err => console.error(err));
+      this.props.enableEdit();
     }
   }
 
