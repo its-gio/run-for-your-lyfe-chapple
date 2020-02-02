@@ -25,11 +25,13 @@ export default class AddResident extends React.Component {
     this.setState({ c_in: today, meal });
   }
 
-  postPerson = () => {
+  postPerson = (e) => {
+    e.preventDefault();
     axios
       .post(`/api/people/`, this.state)
       .then(res => this.props.getNewData(res.data))
       .catch(err => console.log(err));
+    this.props.showModalToggle();
   }
 
   createDefault = () => {
@@ -73,7 +75,7 @@ export default class AddResident extends React.Component {
 
     return ReactDOM.createPortal(
       <div onClick={this.props.showModalToggle} className="edit-modal">
-        <form onSubmit={this.postPerson} onClick={(e) => e.stopPropagation()} >
+        <form onClick={(e) => e.stopPropagation()} >
           <input onChange={this.handleChange} value={ this.state.first_name } name="first_name" placeholder="First Name" />
           <input onChange={this.handleChange} value={ this.state.last_name } name="last_name" placeholder="Last Name" />
           <input onChange={this.handleChange} value={ this.state.c_in } name="c_in" placeholder="mm/dd/yyy" />
@@ -86,7 +88,7 @@ export default class AddResident extends React.Component {
               <textarea onBlur={this.addSkills} placeholder="Skill1: 1-5, Skill2: 1-5, Skill3: 1-5" id="" cols="30" rows="10"></textarea>
             </span>
           </span>
-          <button>Submit</button>
+          <button onClick={this.postPerson} >Submit</button>
         </form>
       </div>,
       document.querySelector('#modal')

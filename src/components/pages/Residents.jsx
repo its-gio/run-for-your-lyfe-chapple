@@ -26,7 +26,7 @@ export default class Residents extends Component {
           <ul>{ residentsList }</ul>
         </section>
 
-        { this.state.addModalShow ? <AddResident showModalToggle={this.showModalToggle} /> : ""}
+        { this.state.addModalShow ? <AddResident getNewData={this.props.getNewData} showModalToggle={this.showModalToggle} /> : ""}
         <button onClick={this.showModalToggle} className="add-resident">+</button>
       </div>
     )
