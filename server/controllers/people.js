@@ -2,7 +2,16 @@ const { data: people, decessed, emailList } = require("../../data");
 let dataLength = people.length;
 let id = dataLength;
 
-module.exports.getPeople = (req, res) => res.status(200).json(people);
+module.exports.getPeople = (req, res) => {
+  const { past_residents } = req.query;
+  if (past_residents === "emailList") {
+    return res.status(200).json(emailList);
+  } else if (past_residents === "decessed") {
+    return res.status(200).json(decessed);
+  }
+
+  return res.status(200).json(people);
+}
 
 module.exports.postPerson = (req, res) => {
   const person = req.body;
@@ -10,7 +19,7 @@ module.exports.postPerson = (req, res) => {
   people.push({id, ...person});
   id++;
 
-  res.status(200).send(people);
+  res.status(200).json(people);
 }
 
 module.exports.deletePerson = (req, res) => {
@@ -18,7 +27,7 @@ module.exports.deletePerson = (req, res) => {
   let targetIndex = people.findIndex(person => person.id === +id)
   if (targetIndex === -1) return res.status(404).send(`${id} does not exist!`);
   let person = people.splice(targetIndex, 1);
-  decessedParam === "yes" ? decessed.push(person) : emailList.push(person);
+  decessedParam.toLowerCase() === "yes" ? decessed.push(person) : emailList.push(person);
 
   res.status(200).json(people);
 }
