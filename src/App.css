@@ -56,6 +56,24 @@ button:focus {
   margin-right: 5px;
 }
 
+.residents-list li span .meal {
+  position: relative;
+  margin-right: 25px;
+}
+
+.meal .meal--eaten{
+  content: "";
+  background-color: red;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translate(-50%, -50%);
+}
+
 .residents-list li span .available {
   display: block;
   width: 10px;

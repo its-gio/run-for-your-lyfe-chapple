@@ -11,7 +11,7 @@ export default function PersonLiDisplay(props) {
         <span>{last_name}</span>
         <span>{c_in}</span>
         <span>{c_out ? c_out : "None" }</span>
-        <span>meals</span>
+        <span className="meals"><span className="meal">B: <span className="meal--eaten"></span> </span> <span className="meal">L: <span className="meal--eaten"></span> </span> <span className="meal">D: <span className="meal--eaten"></span> </span> </span>
         <span>{job}</span>
         <span><span style={{backgroundColor: availableColor}} className="available"></span></span>
         <span>Learn More ></span>
