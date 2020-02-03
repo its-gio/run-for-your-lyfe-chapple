@@ -11,7 +11,8 @@ class App extends React.Component {
 
     this.state = {
       people: [],
-      page: "residents"
+      page: "residents",
+      personSkillz: {}
     }
   }
 
@@ -30,14 +31,19 @@ class App extends React.Component {
     this.setState({ people })
   }
 
+  getPersonsSkillz = (personSkillz) => {
+    this.setState({ personSkillz })
+    this.changePage("skillz")
+  }
+
   render() {
     switch(this.state.page) {
       case "home":
         return <Home changePage={this.changePage} />
       case "residents":
-        return <Residents changePage={this.changePage} getNewData={this.getNewData} people={this.state.people} />
+        return <Residents getPersonsSkillz={this.getPersonsSkillz} getNewData={this.getNewData} people={this.state.people} />
       case "skillz":
-        return <Skillz changePage={this.changePage} getNewData={this.getNewData} people={this.state.people} />
+        return <Skillz changePage={this.changePage} getNewData={this.getNewData} personSkillz={this.state.personSkillz} />
       default:
         return <Home changePage={this.changePage} />
     }

@@ -171,3 +171,25 @@ button:focus {
   color: #1a0dab;
 }
 
+/***** Skillz *****/
+.residentsBackBtn {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.skillz-list {
+  background-color: #aaa;
+  width: 95%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.skillz-list h4 {
+  display: flex;
+  justify-content: center;
+}
+
+.skillz-list h4 span {
+  text-decoration: underline;
+}

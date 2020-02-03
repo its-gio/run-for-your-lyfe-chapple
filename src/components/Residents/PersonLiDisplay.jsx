@@ -23,7 +23,7 @@ export default function PersonLiDisplay(props) {
         </span>
         <span>{job}</span>
         <span><span style={{backgroundColor: circleColor("available")}} className="available"></span></span>
-        <span className="skillsBtn" onClick={() => props.changePage("skillz")}>More ></span>
+        <span className="skillsBtn" onClick={() => props.getPersonsSkillz(props.person)}>More ></span>
       </li>
       <hr/>
     </>

@@ -18,8 +18,8 @@ export default class PersonLI extends React.Component {
   render () {
     return (
       <>
-        <PersonLiDisplay changePage={this.props.changePage} enableEdit={this.enableEdit} person={this.props.person} />
-        { this.state.edit ? <PersonLiEdit changePage={this.props.changePage} getNewData={this.props.getNewData} enableEdit={this.enableEdit} person={this.props.person} /> : ""}
+        <PersonLiDisplay getPersonsSkillz={this.props.getPersonsSkillz} enableEdit={this.enableEdit} person={this.props.person} />
+        { this.state.edit ? <PersonLiEdit getPersonsSkillz={this.props.getPersonsSkillz} getNewData={this.props.getNewData} enableEdit={this.enableEdit} person={this.props.person} /> : ""}
       </>
     )
   }
