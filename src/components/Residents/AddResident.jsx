@@ -41,7 +41,7 @@ export default class AddResident extends React.Component {
     const yyyy = today.getFullYear();
     today = `${mm}/${dd}/${yyyy}`;
 
-    const meal = {breakfast: false, lunch: false, dinner: false, date: today}
+    const meal = [{breakfast: false, lunch: false, dinner: false, date: today}]
 
     return { today, meal };
   }

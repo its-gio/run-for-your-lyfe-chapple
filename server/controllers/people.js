@@ -17,6 +17,7 @@ module.exports.getPeople = (req, res) => {
 
 module.exports.postPerson = (req, res) => {
   const person = req.body;
+  people[dataLength-1].id === id ? id++ : id;
   people.push({id, ...person});
   id++;
 
