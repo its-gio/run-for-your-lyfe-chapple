@@ -5,8 +5,10 @@ let id = dataLength;
 module.exports.getPeople = (req, res) => {
   const { past_residents } = req.query;
   if (past_residents === "emailList") {
+    // http://localhost:2020/api/people?past_residents=emailList
     return res.status(200).json(emailList);
   } else if (past_residents === "decessed") {
+    // http://localhost:2020/api/people?past_residents=decessed
     return res.status(200).json(decessed);
   }
 

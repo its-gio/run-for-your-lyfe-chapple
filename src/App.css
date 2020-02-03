@@ -121,6 +121,23 @@ button:focus {
   position: relative;
 }
 
+.edit-modal .meal {
+  position: relative;
+  margin-right: 25px;
+}
+
+.meal .meal--eaten{
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  transform: translate(-50%, -50%);
+}
+
 .edit-modal form span .available {
   display: block;
   width: 10px;
