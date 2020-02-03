@@ -165,3 +165,9 @@ button:focus {
 .skills-container p {
   margin-right: 10px;
 }
+
+.skillsBtn {
+  cursor: pointer;
+  color: #1a0dab;
+}
+

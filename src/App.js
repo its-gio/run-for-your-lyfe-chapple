@@ -3,6 +3,7 @@ import axios from 'axios'
 import './App.css';
 import Home from "./components/pages/Home"
 import Residents from "./components/pages/Residents"
+import Skillz from "./components/pages/Skillz"
 
 class App extends React.Component {
   constructor() {
@@ -34,7 +35,9 @@ class App extends React.Component {
       case "home":
         return <Home changePage={this.changePage} />
       case "residents":
-        return <Residents getNewData={this.getNewData} people={this.state.people} />
+        return <Residents changePage={this.changePage} getNewData={this.getNewData} people={this.state.people} />
+      case "skillz":
+        return <Skillz changePage={this.changePage} getNewData={this.getNewData} people={this.state.people} />
       default:
         return <Home changePage={this.changePage} />
     }

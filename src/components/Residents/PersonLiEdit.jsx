@@ -86,7 +86,7 @@ export default class PersonLiEdit extends React.Component {
           </span>
           <input onChange={this.handleChange} value={ this.state.job } name="job" placeholder="job" />
           <span onDoubleClick={this.changeAvail}>Available: <span style={{backgroundColor: this.circleColor("available")}} className="available"></span></span>
-          <span>Skill</span>
+          <span className="skillsBtn" onClick={() => this.props.changePage("skillz")}>Skill ></span>
           <p>Remove: <input checked={false} onChange={this.deletePerson} type="checkbox"/></p>
           <button onClick={this.putPerson}>Submit</button>
         </form>
