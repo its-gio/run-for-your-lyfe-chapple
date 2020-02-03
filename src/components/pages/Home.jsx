@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from "../defaults/Header"
-import { BangalowCloseup, BangalowCloseup2, BeachShot, Outdoor, PoolArea, ResortOverview } from "../defaults/Images";
+import { Banners, BangalowCloseup, BangalowCloseup2, BeachShot, Outdoor, PoolArea, ResortOverview } from "../defaults/Images";
 
 
 export default class Home extends Component {
@@ -10,6 +10,9 @@ export default class Home extends Component {
         <div className="home--loggin">
           <Header title="Run For Your Lyfe Chapple" />
           <button onClick={() => this.props.changePage("residents")}>See Survivors</button>
+        </div>
+        <div className="banner">
+          <img src={Banners} alt=""/>
         </div>
         <div className="image-grid">
           <img src={Outdoor} alt=""/>
